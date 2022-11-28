@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+
+    <!-- CSS only -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesomeLuxurious+Roman/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      crossorigin="anonymous"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      rel="stylesheet"
+    />
+
+    <link
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      crossorigin="anonymous"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script src="../static/scripts/main.js"></script>
+
+    <link
+      href="{{ url_for('static', filename='css/main.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/dropdown.css') }}"
+      rel="stylesheet"
+    />
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    <!-- Hidden Collapsable Side-Bar -->
+    <div id="mySidebar" class="sidebar">
+      <a href="" class="closebtn" onclick="closeNav()">×</a>
+
+      <p class="" href="/basics" id="basicsId">Project Basics</p>
+      <a class="" href="/home" id="home">Home</a>
+      <a class="" href="/about_us" id="AboutUs">AboutUs</a>
+
+
+      <p class="" href="/basics" id="basicsId">Analytics</p>
+      <a class="" href="/deployment_frequency" id="deploymentId">Deployment Frequency 
+        <span title="Deployment frequency is how often new code changes are deployed to production. It's a measure of a team's speed and agility. This metric tracks how quickly teams can release new features or fixes.">&ensp;<i class="fa-solid fa-circle-info"></i></span>
+      </a>
+
+
+      <a class="" href="/burn_down" id="burndownId">Burn Down
+        <span title="You're working in a project on Jira Software, and you want to track the progress of a sprint, or epic.">&ensp;<i class="fa-solid fa-circle-info"></i></span>
+      </a>
+      <a class="" href="/burn_up" id="burnupId">Burn Up
+        <span title="A burnup chart is very similar to a burndown chart; it’s used to show how many story points are in the Product Backlog versus how many we’ve completed to date.">&ensp;<i class="fa-solid fa-circle-info"></i></span>
+      </a>
+      <a class="" href="/about_us" id="codeVelId">Code Velocity</a>
+      <a class="" href="/dataframe" id="zubeDataId" target="_blank">Zube.IO Raw Data</a>
+      <a class="" href="/quick_data_analysis" id="qdaId" target="_blank">Explorative Data Analysis</a>
+      <ul class="filterList">
+        <li class="sub-menu-parent" tab-index="0">
+          <a class="" href="#" id="searchFilterId">Filter Your Data</a>
+          <ul class="sub-menu">
+            <li><a href="project_filter">Project</a></li>
+            <li><a href="user_filter">User</a></li>
+            <li><a href="date_range_filter">Date Range</a></li>
+        </li>
+        
+      </ul>
+      <a ></a>
+
+
+
+    </div>
+
+    <!--NAVBAR/HEADER SECTION-->
+    <nav class="navbar navbar-light navbar-expand-lg mynav" id="myNavId">
+      <div class="container-fluid">
+        <button
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-bs-target="#navbarNavAltMarkup"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto justify-content-end">
+            <!-- <a aria-current="page" class="nav-link" href="/home" id="home"
+              >Home</a>-->
+            
+            <button class="openbtn nav-link" onclick="openNav()" style="color:ghostwhite;">☰ 🏠</button>
+            <!-- <a class="nav-link" href="/logout" id="logout">Logout</a> -->
+            <!-- <p class="projectTitle">Stroke Prediction</p> -->
+
+            <p class="projectTitle">Zube Analysis</p>
+          </div>
+        </div>
+        <!--        <a class="navbar-brand asp">AboutUs</a>-->
+        <!--        <a class="navbar-brand asp">Blog</a>-->
+      </div>
+    </nav>
+
+    {% block body %} {% endblock %}
+  </body>
+</html>

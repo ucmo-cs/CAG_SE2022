@@ -1,0 +1,369 @@
+body {
+  font-size: 0.9rem;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  background-attachment: fixed;
+}
+
+.mynav {
+  /* background-color: #e3f2fd; */
+}
+.asp {
+  padding-left: 10px;
+}
+
+.projectTitle {
+  position: absolute;
+  right: 20px;
+  font-family: "Ubuntu";
+  font-size: 1.5rem;
+  color: "darkslategrey";
+  font-weight: bold;
+  padding-top: 2px;
+}
+
+.mainbody {
+  padding-top: 35px;
+}
+
+.mt_150 {
+  margin-top: 150px;
+}
+
+.quoteSize {
+}
+.mt_100 {
+  margin-top: 100px;
+}
+
+.mt_60 {
+  margin-top: 60px;
+}
+
+h3,
+.reporttimetext {
+  text-align: center;
+}
+
+#carddiv1 {
+  float: left;
+  background: white;
+  width: 15%;
+  height: 280px;
+}
+#carddiv2 {
+  float: left;
+  width: 70%;
+}
+#carddiv3 {
+  float: right;
+  width: 15%;
+  height: 280px;
+}
+
+#first_footer {
+  float: left;
+  background: white;
+  width: 30%;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: 10px;
+}
+#second_footer {
+  margin-top: 10px;
+  float: left;
+  background: white;
+  width: 30%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.navtoprighttext {
+  padding-right: 20px;
+}
+
+/*.modelinput{
+    margin-left: 25%;
+    border-collapse: separate;
+}*/
+
+td {
+  padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+  background-color: #e3f2fd;
+  text-align: center;
+}
+
+.predictbutton {
+  text-align: center;
+}
+
+.foottext {
+  padding-top: 10px;
+}
+
+.reporth3text {
+  padding-top: 1.5rem;
+}
+
+.fade_out {
+  opacity: 0;
+}
+
+.aboutMeDiv {
+  font-family: "Comfortaa", cursive;
+}
+
+.myImageDiv {
+  width: 50%;
+  float: left;
+  text-align: center;
+  height: 380px;
+}
+
+.myDetailsDiv {
+  width: 50%;
+  float: right;
+  height: 380px;
+}
+
+.myDetailsTable {
+  margin-top: 8.5rem;
+  margin-left: 2rem;
+}
+
+.myProfileClass {
+  margin-top: 5rem;
+  height: 254px;
+  border-radius: 127px;
+  float: right;
+}
+
+.myDescriptionDiv {
+  float: left;
+  width: 50%;
+  margin-left: 24rem;
+  text-align: center;
+}
+
+/*************** Collapsable Side-bar CSS  STARTS Here ********************/
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #f5dfdf;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #e89292;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #a27b7b;
+  padding: 7px 12px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #7e5d5d;
+}
+
+#myNavId {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+#mainHomeId {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+#basicsId {
+  color: white;
+  padding-left: 5px;
+  font-size: 1.2rem;
+}
+
+/* Smaller screens, where height is less than 450px, 
+  change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/*************** Collapsable Side-bar ENDS Here ********************/
+
+/*************** AboutUs Page CSS  STARTS Here ********************/
+
+.aboutUsDiv {
+  width: 100%;
+  height: 100%;
+  /* background: red; */
+}
+
+.sujoy {
+  width: 60%;
+  float: left;
+  padding-left: 2.45rem;
+  padding-top: 1rem;
+}
+
+.imageDiv {
+  float: left;
+  height: 250px;
+  width: 30%;
+}
+
+.textDiv {
+  float: right;
+  width: 70%;
+  padding-top: 2rem;
+}
+
+#profile1 {
+  height: 214px;
+  border-radius: 107px;
+  width: 195px;
+}
+
+#profile2 {
+  height: 223px;
+  border-radius: 111px;
+  width: 221px;
+}
+
+.kaushik {
+  width: 60%;
+  float: right;
+  /* text-align: left; */
+  /* padding: 1.3rem; */
+}
+
+.umadevi {
+  width: 60%;
+  float: left;
+  /* padding: 1.3rem; */
+}
+
+.pranavi {
+  width: 60%;
+  float: right;
+}
+
+.vineeth {
+  width: 60%;
+  float: left;
+}
+
+#profile3 {
+  height: 218px;
+  border-radius: 107px;
+  margin-left: 2rem;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.aboutUsTable1 {
+  width: 900px;
+}
+
+.aboutUsTable1 td:nth-child(1),
+.aboutUsTable2 td:nth-child(1),
+.aboutUsTable3 td:nth-child(1) {
+  text-decoration: underline;
+}
+
+.aboutUsTable2 td:nth-child(2) {
+  text-align: left;
+}
+
+.contributionList li {
+  list-style-type: disc;
+}
+
+/*************** AboutUs Page CSS ENDS Here ********************/
+
+@media screen and (max-width: 769px), screen and (max-device-width: 575px) {
+  .footer {
+    position: relative;
+    padding-top: 0px;
+    display: grid;
+  }
+
+  .foottext {
+    padding-top: 15px;
+  }
+
+  .asp {
+    padding-left: 25%;
+  }
+
+  .regbtn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    padding: 1.3rem;
+  }
+
+  .reginput {
+    padding: 1.3rem;
+  }
+
+  input {
+    height: 50%;
+  }
+
+  .mainbody {
+    padding-top: 10px;
+  }
+
+  .mobResoultionEmail,
+  .mobResoultionPass {
+    height: 2.5rem;
+  }
+
+  .mobResoultionLogin {
+    height: 2.5rem;
+    padding: 0;
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zube.io Data</title>
+    <link
+      href="{{ url_for('static', filename='css/dataframe.css') }}"
+      rel="stylesheet"
+    />
+
+    <script>
+      function myBorder() {
+        console.log(document.getElementsByClassName("dataframe"));
+        document.getElementsByClassName("dataframe")[0].border = "0";
+      
+      }
+      </script>
+  </head>
+  <body onload="myBorder()">
+    <u>
+      <h1>Zube.IO Data In Tabular Format!</h1>
+    </u>
+    {% for table in table %}
+    <!-- <table class="table table-striped dataframe_table"></table> -->
+    {{ table|safe }} {% endfor %}
+  </body>
+</html>

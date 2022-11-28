@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- <link rel="icon" href="static/images/heartUs.png" type="image/png"> -->
+<title>Project Filter</title>
+
+<!-- <link rel="icon" href="static/images/heartUs.png" type="image/png"> -->
+<link
+      href="{{ url_for('static', filename='css/filterPages.css') }}"
+      rel="stylesheet"
+    />
+    <link
+    href="{{ url_for('static', filename='css/dataframe.css') }}"
+    rel="stylesheet"
+  />
+
+  <script>
+    function myBorder() {
+      // console.log(document.getElementsByClassName("dataframe"));
+      document.getElementsByClassName("dataframe")[0].border = "0";
+    
+    }
+    </script>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="row" style="padding-top: 2rem;">
+    <div class="col-lg-3"></div>
+
+    <div class="col-lg-6">
+      <h4  style="text-align: center; text-decoration: underline;">Welcome to Project-Filter Page</h3> <br>
+
+      <form id="loginFormId" method="POST" action="/display_project_wise_data">
+        <div class="form-group col-lg-12 col-md-10 col-sm-12">
+          <label for="fetchProjectid" >Choose Project: </label>
+          <input list="fetchProjectIds" name="fetchProjectid" id="fetchProjectid">
+            <datalist id="fetchProjectIds">
+              {% for id,name in project_id_names.items() %}
+              <option value="{{ id }}">{{ name }}</option>
+              {% endfor %}
+            </datalist>
+        
+          <button type="submit" class="btn btn-primary" style="width:10rem; float: right; background-color: #87c043!important;
+          border-color: #8bc34a!important;" id="filterBtnId">Apply Filter</button>   
+        </div>
+      </form>
+    </div>
+
+    <div class="projectTabularData">
+      {% for table in table %}
+        {{ table|safe }} 
+      {% endfor %}
+    </div>
+
+    <div class="col-lg-3"></div>
+  </div>
+
+
+
+
+
+{% endblock %}
