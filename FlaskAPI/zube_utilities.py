@@ -76,3 +76,14 @@ def plot_render_image(plotData, xlabel, ylabel):
     myAxis.figure.savefig(imgBuffer, format="jpeg") # In memory
     imgBuffer.seek(0)
     return base64.b64encode(imgBuffer.getvalue())
+
+
+def plot_bar_image(xData, yData, xlabel, ylabel):
+    plt.figure(figsize=(8, 8))
+    myAxis = sns.barplot(x=xData, y=yData)
+    myAxis.set(xlabel=xlabel, ylabel=ylabel)
+    # myAxis.tick_params(axis='x', labelrotation = 45)
+    imgBuffer = io.BytesIO()
+    myAxis.figure.savefig(imgBuffer, format="jpeg") # In memory
+    imgBuffer.seek(0)
+    return base64.b64encode(imgBuffer.getvalue())

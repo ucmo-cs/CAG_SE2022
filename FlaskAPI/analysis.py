@@ -3,7 +3,7 @@ import io
 import pandas as pd
 pd.options.mode.chained_assignment = None
 from flask import Flask, render_template, Blueprint, request, send_file
-from .zube_utilities import fetchZubeJSONdata, fetch_project_id_names, plot_render_image
+from .zube_utilities import fetchZubeJSONdata, fetch_project_id_names, plot_render_image, plot_bar_image
 import matplotlib.pyplot as plt
 # from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import seaborn as sns
@@ -105,3 +105,45 @@ def plot_deployment_frequency():
 
 
 
+@analysis.route('/burn_down_records', methods=("POST", "GET"))
+def burn_down_records():
+    workspace_id= request.form.get('fetchWorkspaceId')
+    APIURL = "https://zube.io/api/workspaces/" + workspace_id + "/sprints"
+    workspace_id_data = fetchZubeJSONdata(APIURL)
+    burndown_df = pd.json_normalize(workspace_id_data)
+    project_id_name_dict, proj_ws_id_dict, proj_ws_name_dict = fetch_project_id_names()
+    project_id_name_zip = zip(list(proj_ws_id_dict.values()), proj_ws_name_dict.values())
+    return render_template('analysis/burn_down.html',
+                           PageTitle="dataframe",
+                           table=[burndown_df.to_html(
+                               classes='data', index=False, header=True)],
+                           titles=burndown_df.columns.values, project_id_names=project_id_name_dict, proj_workspace=project_id_name_zip)
+
+
+@analysis.route('/burn_up_records', methods=("POST", "GET"))
+def burn_up_records():
+    workspace_id= request.form.get('fetchWorkspaceId')
+    APIURL = "https://zube.io/api/workspaces/" + workspace_id + "/sprints"
+    workspace_id_data = fetchZubeJSONdata(APIURL)
+    burndown_df = pd.json_normalize(workspace_id_data)
+    project_id_name_dict, proj_ws_id_dict, proj_ws_name_dict = fetch_project_id_names()
+    project_id_name_zip = zip(list(proj_ws_id_dict.values()), proj_ws_name_dict.values())
+    return render_template('analysis/burn_up.html',
+                           PageTitle="dataframe",
+                           table=[burndown_df.to_html(
+                               classes='data', index=False, header=True)],
+                           titles=burndown_df.columns.values, project_id_names=project_id_name_dict, proj_workspace=project_id_name_zip)
+
+
+
+@analysis.route('/code_velocity_submit', methods=("POST", "GET"))
+def code_velocity_submit():
+    project_id_name_dict, proj_ws_id_dict, proj_ws_name_dict = fetch_project_id_names()
+    project_id_name_zip = zip(list(proj_ws_id_dict.values()), proj_ws_name_dict.values())
+    workspace_id= request.form.get('fetchWorkspaceId')
+    APIURL = "https://zube.io/api/workspaces/" + workspace_id + "/sprints"
+    workspace_id_data = fetchZubeJSONdata(APIURL)
+    code_vel_df = pd.json_normalize(workspace_id_data)
+    imgInMemory = plot_bar_image(code_vel_df['title'], code_vel_df['closed_points'], "Sprints", "Points Delivered")
+    return render_template('analysis/code_velocity.html', plot_url=imgInMemory.decode('utf-8'), project_id_names=project_id_name_dict, proj_workspace=project_id_name_zip)
+    

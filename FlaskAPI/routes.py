@@ -69,6 +69,21 @@ def  burn_down():
     return render_template('analysis/burn_down.html',project_id_names=project_id_name_dict, proj_workspace=project_id_name_zip)
 
 
+@routes.route('/burn_up', methods=("POST", "GET"))
+def  burn_up():
+    project_id_name_dict, proj_ws_id_dict, proj_ws_name_dict = fetch_project_id_names()
+    project_id_name_zip = zip(list(proj_ws_id_dict.values()), proj_ws_name_dict.values())
+    return render_template('analysis/burn_up.html',project_id_names=project_id_name_dict, proj_workspace=project_id_name_zip)
+
+
+@routes.route('/code_velocity', methods=("POST", "GET"))
+def  code_velocity():
+    project_id_name_dict, proj_ws_id_dict, proj_ws_name_dict = fetch_project_id_names()
+    project_id_name_zip = zip(list(proj_ws_id_dict.values()), proj_ws_name_dict.values())
+    return render_template('analysis/code_velocity.html',project_id_names=project_id_name_dict, proj_workspace=project_id_name_zip)
+
+
+
 #################  Filter Routes  ##################
 @routes.route('/project_filter', methods=('POSTS', 'GET'))
 def projectFilter():

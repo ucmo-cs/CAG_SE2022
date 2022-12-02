@@ -322,6 +322,26 @@ td {
 
 /*************** AboutUs Page CSS ENDS Here ********************/
 
+
+/* Home Page CSS Starts here */
+
+#img_box_shadow{
+  box-shadow: 0 0 5px #422a2a;
+}
+
+.homelinks{
+  text-decoration: none;
+  color: #d87373;
+}
+
+.homelinks:hover{
+  text-decoration: none;
+  color: #9b3636;
+}
+
+/* Home Page CSS Ends here */
+
+
 @media screen and (max-width: 769px), screen and (max-device-width: 575px) {
   .footer {
     position: relative;
